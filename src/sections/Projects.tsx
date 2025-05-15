@@ -9,33 +9,33 @@ import grainImage from "@/assets/images/grain.jpg"
 
 const portfolioProjects = [
   {
-    company: "Acme Corp",
-    year: "2022",
-    title: "Dark Saas Landing Page",
+    company: "Antivirus Fundation",
+    year: "2024",
+    title: "Antivirus Landing Page",
     results: [
       { title: "Enhanced user experience by 40%" },
       { title: "Improved site speed by 50%" },
       { title: "Increased mobile traffic by 35%" },
     ],
-    link: "https://youtu.be/4k7IdSLxh6w",
+    link: "https://mcmendezm.github.io/FundacionAntivirus/",
     image: darkSaasLandingPage,
   },
   {
-    company: "Innovative Co",
-    year: "2021",
-    title: "Light Saas Landing Page",
+    company: "MWbusiness group",
+    year: "2025",
+    title: "MWbusinessgroup Landing Page",
     results: [
       { title: "Boosted sales by 20%" },
       { title: "Expanded customer reach by 35%" },
       { title: "Increased brand awareness by 15%" },
     ],
-    link: "https://youtu.be/7hi5zwO75yc",
+    link: "https://teo1188.github.io/MwBusinessGroup/",
     image: lightSaasLandingPage,
   },
   {
-    company: "Quantum Dynamics",
-    year: "2023",
-    title: "AI Startup Landing Page",
+    company: "Amadeus",
+    year: "2025",
+    title: "Amadeus overtime aplication",
     results: [
       { title: "Enhanced user experience by 40%" },
       { title: "Improved site speed by 50%" },
