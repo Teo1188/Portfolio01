@@ -48,7 +48,7 @@ const portfolioProjects = [
 
 export const ProjectsSection = () => {
   return (
-    <section className="pb-16">
+    <section className="pb-16 lg:py-24">
       <div className="container">
         <div className="flex justify-center">
           <p className="uppercase font-semibold tracking-widest bg-gradient-to-r from-emerald-300 to-sky-400 text-center bg-clip-text text-transparent">
@@ -56,20 +56,22 @@ export const ProjectsSection = () => {
           </p>
         </div>
         <h2 className="font-serif text-3xl md:text-5xl text-center mt-6">Featured Projects</h2>
-        <p className="text-center md:text-lg text-white/60 mt-4 max-w-md">See how I transformed concepts into enganging digital experiences.
+        <p className="text-center md:text-lg lg:text-xl text-white/60 mt-4 max-w-md mx-auto ">See how I transformed concepts into enganging digital experiences.
         </p>
         <div className="mt-10 md:mt-20 flex flex-col gap-20">
           {portfolioProjects.map((Project) => (
             <div key={Project.title}
             className="bg-gray-800 rounded-3xl relative z-0 overflow-hidden after:z-10 after:content-['']
             after:absolute after:inset-0 after:outline-2 after:outline after:-outline-offset-2
-            after:rounded-3xl after:outline-white/20 px-8 pt-8 md:pt-12 md:px-10 after:pointer-events-none"
+            after:rounded-3xl after:outline-white/20 px-8 pt-8 md:pt-12 md:px-10 lg:pt-16 lg:px-20 after:pointer-events-none"
             >
               <div className="absolute insent-0 -z-10 opacity-5" 
                 style={{
                 backgroundImage: `url(${grainImage.src})`,
               }}
               ></div>
+                <div className="lg:grid lg:grid-cols-2 gap-16">
+                <div className="lg:pb-16">
                 <div className="bg-gradient-to-r from-emerald-300 to-sky-400 inline-flex gap-2
                  font-bold uppercase tracking-widest text-sm text-transparent bg-clip-text">
                   <span>{Project.company}</span>
@@ -87,14 +89,23 @@ export const ProjectsSection = () => {
                   </li>
                 ))}
               </ul>
-              <a href={Project.link}>
+              <a href={Project.link} target="_blank">
                 <button className="bg-white text-gray-950 h-12 w-full md:w-auto px-6 rounded-xl 
                 font-semibold inline-flex items-center justify-center gap-2 mt-8">
                   <span>Visit Live Site</span>
                   <ArrowUpRightIcon className="size-4" />
                 </button>
               </a>
-              <Image src={Project.image} alt={Project.title} className="mt-8 -mb-4" />
+              </div>
+              <div className="relative">
+              <Image
+               src={Project.image}
+               alt={Project.title}
+               className="mt-8 -mb-4 md:-mb-0
+               lg:mt-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none lg:rounded-xl"
+               />
+              </div>
+            </div>
             </div>
           ))}
         </div>
