@@ -10,56 +10,69 @@ export const HeroSection = () => {
   return (
     <div className="py-32 md:py-48 lg:py-50 relative z-100 overflow-x-clip">
       <div className="absolute inset-0 [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
-      <div className="absolute inset-0 -z-30 opacity-5" style={{
-        backgroundImage: `url(${grainImage.src})`,
-      }}
-      ></div>
-      
-      <div className="size-[820px] hero-ring"></div>
-      <div className="size-[1020px] hero-ring"></div>
-      <div className="size-[1220px] hero-ring"></div>
-      <div className="size-[1420px] hero-ring"></div>
-      <HeroOrbit size={940} rotation={-72}>
-        <StarIcon className="size-28 text-emerald-300" />
-      </HeroOrbit>
-      <HeroOrbit size={690} rotation={20}>
-      <StarIcon className="size-12 text-emerald-300" />
-      </HeroOrbit>
-      <HeroOrbit size={850} rotation={98}>
-      <StarIcon className="size-8 text-emerald-300" />
-      </HeroOrbit>
-      <HeroOrbit size={580} rotation={-15}>
-      <SparkleIcon className="size-8 text-emerald-300/20" />
-      </HeroOrbit>
-      <HeroOrbit size={630} rotation={79}>
-      <SparkleIcon className="size-5 text-emerald-300/20" />
-      </HeroOrbit>
-      <HeroOrbit size={680} rotation={180}>
-      <SparkleIcon className="size-10 text-emerald-300/20" />
-      </HeroOrbit>
-      <HeroOrbit size={880} rotation={144}>
-      <SparkleIcon className="size-14 text-emerald-300/20" />
-      </HeroOrbit>
-      <HeroOrbit size={990} rotation={86}>
-      <div className="size-3 rounded-full bg-emerald-300/20"></div>
-      </HeroOrbit>
-      <HeroOrbit size={800} rotation={0}>
-      <div className="size-3 rounded-full bg-emerald-300/20"></div>
-      </HeroOrbit>
-      <HeroOrbit size={700} rotation={120}>
-      <div className="size-2 rounded-full bg-emerald-300/20"></div>
-      </HeroOrbit>
-      <HeroOrbit size={700} rotation={-45}>
-      <div className="size-2 rounded-full bg-emerald-300/20"></div>
-      </HeroOrbit>
+        <div
+          className="absolute inset-0 -z-30 opacity-5"
+          style={{
+            backgroundImage: `url(${grainImage.src})`,
+          }}
+        ></div>
+
+        <div className="size-[820px] hero-ring"></div>
+        <div className="size-[1020px] hero-ring"></div>
+        <div className="size-[1220px] hero-ring"></div>
+        <div className="size-[1420px] hero-ring"></div>
+        <HeroOrbit size={940} rotation={-72}>
+          <StarIcon className="size-28 text-emerald-300" />
+        </HeroOrbit>
+        <HeroOrbit size={690} rotation={20}>
+          <StarIcon className="size-12 text-emerald-300" />
+        </HeroOrbit>
+        <HeroOrbit size={850} rotation={98}>
+          <StarIcon className="size-8 text-emerald-300" />
+        </HeroOrbit>
+        <HeroOrbit size={580} rotation={-15}>
+          <SparkleIcon className="size-8 text-emerald-300/20" />
+        </HeroOrbit>
+        <HeroOrbit size={630} rotation={79}>
+          <SparkleIcon className="size-5 text-emerald-300/20" />
+        </HeroOrbit>
+        <HeroOrbit size={680} rotation={180}>
+          <SparkleIcon className="size-10 text-emerald-300/20" />
+        </HeroOrbit>
+        <HeroOrbit size={880} rotation={144}>
+          <SparkleIcon className="size-14 text-emerald-300/20" />
+        </HeroOrbit>
+        <HeroOrbit size={990} rotation={86}>
+          <div className="size-3 rounded-full bg-emerald-300/20"></div>
+        </HeroOrbit>
+        <HeroOrbit size={800} rotation={0}>
+          <div className="size-3 rounded-full bg-emerald-300/20"></div>
+        </HeroOrbit>
+        <HeroOrbit size={700} rotation={120}>
+          <div className="size-2 rounded-full bg-emerald-300/20"></div>
+        </HeroOrbit>
+        <HeroOrbit size={700} rotation={-45}>
+          <div className="size-2 rounded-full bg-emerald-300/20"></div>
+        </HeroOrbit>
       </div>
       <div className="container">
         <div className="flex flex-col items-center">
-          <Image
-            src={memojiImage}
-            className="size-[300px] h-auto"
-            alt="personality character based in teo"
-          />
+          <div className="relative group">
+            <div
+              className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-80 blur-3xl scale-90 group-hover:scale-110 transition-all duration-500 -z-10 transform-gpu overflow-visible bg-blue-500 hover:bg-purple-500 focus:bg-emerald-500 active:bg-cyan-500"
+              style={{ transform: "translateZ(0)" }}
+            ></div>
+            <div
+              className="origin-bottom transition-transform duration-300 group-hover:scale-[1.03]"
+              style={{ transformOrigin: "bottom center" }}
+            >
+              <Image
+                src={memojiImage}
+                className="size-[300px] h-auto"
+                alt="personality character based in teo"
+              />
+            </div>
+          </div>
           <div className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg">
             <div className="bg-green-500 size-2.5 rounded-full"></div>
             <div className="text-sm font-medium">
