@@ -8,8 +8,11 @@ import HTML5Icon from "@/assets/icons/html5.svg";
 import CssIcon from "@/assets/icons/css3.svg";
 import ReactIcon from "@/assets/icons/react.svg";
 import GithubIcon from "@/assets/icons/github.svg";
-import ChromeIcon from "@/assets/icons/chrome.svg";
+import TailwindCss from "@/assets/icons/tailwindcss.svg";
 import { TechIcon } from "@/components/TechIcon";
+import mapImage from "@/assets/images/map.png";
+import smileMemoji from "@/assets/images/memoji-smile.png";
+import { CardHeader } from "@/components/CardHeader";
 
 const toolboxItems = [
   {
@@ -34,35 +37,64 @@ const toolboxItems = [
   },
   {
     title: "Tailwind CSS",
-    iconType: ChromeIcon,
+    iconType: TailwindCss,
   },
 ]
 
+const hobbies = [
+  {
+    title: "painting",
+    emoji: "🎨​"
+  },
+  {
+    title: "Photography",
+    emoji: "📸​"
+  },
+  {
+    title: "Gaming",
+    emoji: "🎮​​"
+  },
+  {
+    title: "Swimming",
+    emoji: "🏊‍♂️​​"
+  },
+  {
+    title: "Music",
+    emoji: "🎵​"
+  },
+  {
+    title: "Fitness",
+    emoji: "​🏋️"
+  },
+  {
+    title: "Reading",
+    emoji: "📚​"
+  }
+]
+
 export const AboutSection = () => {
-  return <div className="pb-96">
+  return <div className="py-20">
+    <div className="container">
     <SectionHeader 
       eyebrow="About Me"
       title="A Glimpse Into My World" 
       description="Learn more about who I am, what I do, and what inspires me." 
     />
-    <div>
-      <Card>
-        <div>
-          <StarIcon />
-          <h3 className="">My Reads</h3>
-          <p>Explore the books shaping my perspectives</p>
-        </div>
+    <div className="mt-20">
+      <Card className="h-[320px]">
+        <CardHeader
+          title="My Reads"
+          description="Explore the books shaping my perspectives"
+        />
+        <div className="w-40 mx-auto mt-8">
         <Image src={bookImage} alt="Book Cover" />
+        </div>
       </Card>
       <Card>
-        <div>
-          <StarIcon />
-          <h3 className="">My Toolbox</h3>
-          <p>
-            Explore the technologies and tools I use yo craft exceptional 
-            digital experiences.
-          </p>
-        </div>
+        <CardHeader
+          title="My Toolbox"
+          description="Explore the technologies and tools I use to craft exceptional digital experiences."
+        />
         <div>
           {toolboxItems.map(item => (
             <div key={item.title}>
@@ -73,6 +105,25 @@ export const AboutSection = () => {
           ))}
         </div>
       </Card>
+      <Card>
+        <CardHeader
+          title="Beyond the Code"
+          description="Explore my interest and hobbies beyond the digital realm."
+        />
+        <div>
+          {hobbies.map(hobby => (
+            <div key={hobby.title} className="">
+              <span>{hobby.title}</span>
+              <span>{hobby.emoji}</span>
+            </div>
+          ))}
+        </div>
+      </Card>
+      <Card>
+          <Image src={mapImage} alt="Map" className="" />
+          <Image src={smileMemoji} alt="Smile Memoji" className="" />
+      </Card>
     </div>
-  </div>;
+  </div>
+</div>
 };
