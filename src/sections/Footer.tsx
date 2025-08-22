@@ -29,8 +29,9 @@ export const Footer = () => {
         {footerLinks.map(link => (
           <a 
           href={link.href} 
-          key={link.title} 
-          target="_blank" 
+          key={link.title}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-1.5 text-white/70 hover:text-white transition-colors duration-200">
             <span className="font-semibold">{link.title}</span>
             <ArrowUpRightIcon className="size-4" />
