@@ -21,39 +21,40 @@ export const HeroSection = () => {
         <div className="size-[1020px] hero-ring"></div>
         <div className="size-[1220px] hero-ring"></div>
         <div className="size-[1420px] hero-ring"></div>
-        <HeroOrbit size={940} rotation={-72}>
-          <StarIcon className="size-28 text-emerald-300" />
-        </HeroOrbit>
-        <HeroOrbit size={690} rotation={20}>
-          <StarIcon className="size-12 text-emerald-300" />
-        </HeroOrbit>
-        <HeroOrbit size={850} rotation={98}>
-          <StarIcon className="size-8 text-emerald-300" />
-        </HeroOrbit>
-        <HeroOrbit size={580} rotation={-15}>
+
+        <HeroOrbit size={580} rotation={-15} shouldOrbit={true} orbitDuration="30s" shouldSpin={true} spinDuration="10s">
           <SparkleIcon className="size-8 text-emerald-300/20" />
         </HeroOrbit>
-        <HeroOrbit size={630} rotation={79}>
+        <HeroOrbit size={630} rotation={79} shouldOrbit={true} orbitDuration="32s" shouldSpin={true} spinDuration="10s">
           <SparkleIcon className="size-5 text-emerald-300/20" />
-        </HeroOrbit>
-        <HeroOrbit size={680} rotation={180}>
+        </HeroOrbit> 
+        <HeroOrbit size={680} rotation={180} shouldOrbit={true} orbitDuration="34s" shouldSpin={true} spinDuration="10s">
           <SparkleIcon className="size-10 text-emerald-300/20" />
         </HeroOrbit>
-        <HeroOrbit size={880} rotation={144}>
+        <HeroOrbit size={690} rotation={20} shouldOrbit={true} orbitDuration="36s" shouldSpin={true} spinDuration="10s">
+          <StarIcon className="size-12 text-emerald-300" />
+        </HeroOrbit>
+        <HeroOrbit size={700} rotation={-45} shouldOrbit={true} orbitDuration="38s">
+          <div className="size-2 rounded-full bg-emerald-300/20" />
+        </HeroOrbit>
+        <HeroOrbit size={700} rotation={120} shouldOrbit={true} orbitDuration="40s">
+          <div className="size-2 rounded-full bg-emerald-300/20" />
+        </HeroOrbit>
+        <HeroOrbit size={850} rotation={98} shouldOrbit={true} orbitDuration="40s" shouldSpin={true} spinDuration="10s">
+          <StarIcon className="size-8 text-emerald-300" />
+        </HeroOrbit>
+        <HeroOrbit size={800} rotation={0} shouldOrbit={true} orbitDuration="42s">
+          <div className="size-3 rounded-full bg-emerald-300/20"></div>
+        </HeroOrbit>
+        <HeroOrbit size={880} rotation={144} shouldOrbit={true} orbitDuration="44s" shouldSpin={true} spinDuration="10s">
           <SparkleIcon className="size-14 text-emerald-300/20" />
         </HeroOrbit>
-        <HeroOrbit size={990} rotation={86}>
+        <HeroOrbit size={940} rotation={-72} shouldOrbit={true} orbitDuration="46s" shouldSpin={true} spinDuration="8s">
+          <StarIcon className="size-28 text-emerald-300" />
+        </HeroOrbit>
+        <HeroOrbit size={990} rotation={86} shouldOrbit={true} orbitDuration="48s">
           <div className="size-3 rounded-full bg-emerald-300/20"></div>
-        </HeroOrbit>
-        <HeroOrbit size={800} rotation={0}>
-          <div className="size-3 rounded-full bg-emerald-300/20"></div>
-        </HeroOrbit>
-        <HeroOrbit size={700} rotation={120}>
-          <div className="size-2 rounded-full bg-emerald-300/20"></div>
-        </HeroOrbit>
-        <HeroOrbit size={700} rotation={-45}>
-          <div className="size-2 rounded-full bg-emerald-300/20"></div>
-        </HeroOrbit>
+        </HeroOrbit>   
       </div>
       <div className="container">
         <div className="flex flex-col items-center">
@@ -74,7 +75,9 @@ export const HeroSection = () => {
             </div>
           </div>
           <div className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg">
-            <div className="bg-green-500 size-2.5 rounded-full"></div>
+            <div className="bg-green-500 size-2.5 rounded-full relative">
+              <div className="bg-green-500 absolute inset-0 rounded-full animate-ping-large"></div>
+            </div>
             <div className="text-sm font-medium">
               Available for new projects
             </div>
