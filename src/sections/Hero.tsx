@@ -74,6 +74,20 @@ export const HeroSection = () => {
               />
             </div>
           </div>
+
+          <div className="bg-gray-950 border border-gray-800 px-4 py-3 inline-flex items-center justify-center rounded-lg">
+            <div className="font-serif text-center items-center tracking-wide">
+              <div className="font-serif text-center ">
+            <div className="text-4xl text-white md:text-5xl bg-clip-text text-transparent">
+                Tadeo Gaviria
+            </div>
+            <div className="text-2xl md:text-3xl bg-gradient-to-r from-emerald-300 to-sky-400 bg-clip-text text-transparent">
+                Fullstack Developer
+            </div>
+        </div>
+            </div>
+          </div>
+
           <div className="bg-gray-950 border border-gray-800 px-4 py-1.5 inline-flex items-center gap-4 rounded-lg">
             <div className="bg-green-500 size-2.5 rounded-full relative">
               <div className="bg-green-500 absolute inset-0 rounded-full animate-ping-large"></div>
@@ -84,7 +98,7 @@ export const HeroSection = () => {
           </div>
         </div>
         <div className="max-w-lg mx-auto">
-          <h1 className="font-serif text-4xl md:text-5xl text-center mt-8 tracking-wide">
+          <h1 className="font-serif text-2xl md:text-4xl text-center mt-8 tracking-wide">
             Building Exceptional User Experiences
           </h1>
           <p className="mt-4 text-center text-white/60 md:text-lg">
@@ -101,7 +115,7 @@ export const HeroSection = () => {
           </button>
           <button className="inline-flex items-center gap-2 border border-white/15 bg-white text-gray-900 h-12 px-6 rounded-xl">
             <span>👽</span>
-            <span className="font-semibold">Let's Connect</span>
+            <span className="font-semibold">Let&apos;s Connect</span>
           </button>
         </div>
       </div>
