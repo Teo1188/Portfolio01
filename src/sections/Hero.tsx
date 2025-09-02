@@ -25,7 +25,13 @@ export const HeroSection = () => {
         <HeroOrbit size={580} rotation={-15} shouldOrbit={true} orbitDuration="30s" shouldSpin={true} spinDuration="10s">
           <SparkleIcon className="size-8 text-emerald-300/20" />
         </HeroOrbit>
-        <HeroOrbit size={630} rotation={79} shouldOrbit={true} orbitDuration="32s" shouldSpin={true} spinDuration="10s">
+        <HeroOrbit size={630} rotation={-30} shouldOrbit={true} orbitDuration="32s" shouldSpin={true} spinDuration="10s">
+          <SparkleIcon className="size-5 text-emerald-300/20" />
+        </HeroOrbit>
+        <HeroOrbit size={550} rotation={190} shouldOrbit={true} orbitDuration="32s" shouldSpin={true} spinDuration="10s">
+          <SparkleIcon className="size-5 text-emerald-300/20" />
+        </HeroOrbit>
+        <HeroOrbit size={760} rotation={85} shouldOrbit={true} orbitDuration="32s" shouldSpin={true} spinDuration="10s">
           <SparkleIcon className="size-5 text-emerald-300/20" />
         </HeroOrbit> 
         <HeroOrbit size={680} rotation={180} shouldOrbit={true} orbitDuration="34s" shouldSpin={true} spinDuration="10s">
@@ -33,6 +39,9 @@ export const HeroSection = () => {
         </HeroOrbit>
         <HeroOrbit size={690} rotation={20} shouldOrbit={true} orbitDuration="36s" shouldSpin={true} spinDuration="10s">
           <StarIcon className="size-12 text-emerald-300" />
+        </HeroOrbit>
+        <HeroOrbit size={780} rotation={55} shouldOrbit={true} orbitDuration="36s" shouldSpin={true} spinDuration="10s">
+          <StarIcon className="size-8 text-emerald-300" />
         </HeroOrbit>
         <HeroOrbit size={700} rotation={-45} shouldOrbit={true} orbitDuration="38s">
           <div className="size-2 rounded-full bg-emerald-300/20" />
@@ -46,15 +55,24 @@ export const HeroSection = () => {
         <HeroOrbit size={800} rotation={0} shouldOrbit={true} orbitDuration="42s">
           <div className="size-3 rounded-full bg-emerald-300/20"></div>
         </HeroOrbit>
+        <HeroOrbit size={820} rotation={-110} shouldOrbit={true} orbitDuration="42s">
+          <div className="size-3 rounded-full bg-emerald-300"></div>
+        </HeroOrbit>
         <HeroOrbit size={880} rotation={144} shouldOrbit={true} orbitDuration="44s" shouldSpin={true} spinDuration="10s">
           <SparkleIcon className="size-14 text-emerald-300/20" />
         </HeroOrbit>
         <HeroOrbit size={940} rotation={-72} shouldOrbit={true} orbitDuration="46s" shouldSpin={true} spinDuration="8s">
-          <StarIcon className="size-28 text-emerald-300" />
+          <StarIcon className="size-20 text-emerald-300" />
         </HeroOrbit>
         <HeroOrbit size={990} rotation={86} shouldOrbit={true} orbitDuration="48s">
           <div className="size-3 rounded-full bg-emerald-300/20"></div>
-        </HeroOrbit>   
+        </HeroOrbit>
+        <HeroOrbit size={950} rotation={-30} shouldOrbit={true} orbitDuration="50s" shouldSpin={true} spinDuration="10s">
+          <StarIcon className="size-5 text-emerald-300" />
+        </HeroOrbit>
+        <HeroOrbit size={990} rotation={45} shouldOrbit={true} orbitDuration="52s">
+          <div className="size-2 rounded-full bg-emerald-300/20"></div>
+        </HeroOrbit>
       </div>
       <div className="container">
         <div className="flex flex-col items-center">
@@ -109,11 +127,11 @@ export const HeroSection = () => {
           </p>
         </div>
         <div className="flex flex-col md:flex-row justify-center items-center mt-8 gap-4">
-          <button className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl">
+          <button className="inline-flex items-center gap-2 border border-white/15 px-6 h-12 rounded-xl z-10">
             <span className="font-semibold">Explore my work!</span>
             <ArrowDown className="size-4" />
           </button>
-          <button className="inline-flex items-center gap-2 border border-white/15 bg-white text-gray-900 h-12 px-6 rounded-xl">
+          <button className="inline-flex items-center gap-2 border border-white/15 bg-white text-gray-900 h-12 px-6 rounded-xl z-10">
             <span>👽</span>
             <span className="font-semibold">Let&apos;s Connect</span>
           </button>
