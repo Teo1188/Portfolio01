@@ -7,10 +7,11 @@ import { SectionHeader } from "@/components/SectionHeader";
 import Image from "next/image";
 import grainImage from "@/assets/images/grain.jpg";
 import { Card } from "@/components/Card";
+import { Fragment } from "react";
 
 const testimonials = [
   {
-    name: "Alex Turner",
+    name: "Cristian Franco",
     position: "Marketing Manager @ TechStartups",
     text: "Alex was instrumental in transforming our website into a powerful marketing tool. His attention to detail and ability to understand our brand is exceptional. We're thrilled with the results!",
     avatar: memojiAvatar1,
@@ -51,10 +52,12 @@ export const TestimonialsSection = () => {
           description="Don't just take my word for it. Here's what some of my clients have to say about 
         their experience working with me."
         />
-        <div className="mt-16 lg:mt-24 flex overflow-x-clip [mask-image:linear-gradient(to_right, transparent,black_10%,black_90%,transparent)]">
-          <div className="flex gap-8 flex-none">
-          {testimonials.map((testimonial) => (
-            <Card key={testimonial.name} className="max-w-xs md:max-w-md p-6 md:p-8">
+        <div className="mt-12 lg:mt-20 flex overflow-x-clip [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] py-4 my-4">
+          <div className="flex gap-8 flex-none animate-move-left [animation-duration:60s] lg:[animation-duration:80s] hover:[animation-play-state:paused]">
+          {[...new Array(2)].fill(0).map((_, index) => (
+            <Fragment key={index}>
+            {testimonials.map((testimonial) => (
+            <Card key={testimonial.name} className="max-w-xs md:max-w-md p-6 md:p-8 hover:-rotate-3 transition duration-300">
               <div className="flex gap-4 items-center">
                 <div className="size-14 bg-gray-700 inline-flex items-center justify-center rounded-full flex-shrink-0">
                 <Image src={testimonial.avatar} alt={testimonial.name} className="max-h-full" />
@@ -66,7 +69,10 @@ export const TestimonialsSection = () => {
               </div>
               <p className="mt-4 md:mt-6 text-sm md:text-base">{testimonial.text}</p>
             </Card>
+            ))}
+            </Fragment>
           ))}
+          
           </div>
         </div>
       </div>
