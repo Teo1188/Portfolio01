@@ -1,6 +1,5 @@
 import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
-import StarIcon from "@/assets/icons/star.svg";
 import bookImage from "@/assets/images/book-cover.png";
 import Image from "next/image";
 import JavascriptIcon from "@/assets/icons/square-js.svg";
@@ -9,7 +8,6 @@ import CssIcon from "@/assets/icons/css3.svg";
 import ReactIcon from "@/assets/icons/react.svg";
 import GithubIcon from "@/assets/icons/github.svg";
 import TailwindCss from "@/assets/icons/tailwindcss.svg";
-import { TechIcon } from "@/components/TechIcon";
 import mapImage from "@/assets/images/map.png";
 import smileMemoji from "@/assets/images/memoji-smile.png";
 import { CardHeader } from "@/components/CardHeader";
@@ -114,11 +112,11 @@ export const AboutSection = () => {
                 description="Explore the technologies and tools I use to craft exceptional digital experiences."
                 className=""
               />
-              <ToolboxItems items={toolboxItems} className="" />
+              <ToolboxItems items={toolboxItems} className="" itemsWrapperClassName="animate-move-left [animation-duration:30s]" />
               <ToolboxItems
                 items={toolboxItems}
                 className="mt-6 "
-                itemsWrapperClassName="-translate-x-1/2"
+                itemsWrapperClassName="animate-move-right [animation-duration:15s] lg:[animation-duration:40s] hover:[animation-play-state:paused]"
               />
             </Card>
           </div>
@@ -166,7 +164,8 @@ export const AboutSection = () => {
              after:inset-0 after:outline after:outline-2 after:-outline-offset-2 
              after:rounded-full after:outline-gray-950/30"
             >
-              <Image src={smileMemoji} alt="Smile Memoji" className="size-20" />
+              <div className="animate-ping-large absolute inset-0 rounded-full bg-emerald-300/30 [animation-duration:2s]"></div>
+              <Image src={smileMemoji} alt="Smile Memoji" className="size-20 absolute insent-0" />
             </div>
           </Card>
           </div>
