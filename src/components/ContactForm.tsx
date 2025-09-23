@@ -125,10 +125,11 @@ export default function ContactForm() {
         />
       </div>
 
+      <div className="flex justify-center">
       <button 
         type="submit" 
         disabled={isSending}
-        className="w-full bg-gradient-to-r from-emerald-300 to-sky-400 text-gray-900 font-semibold py-3 px-6 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 transform hover:scale-105 hover:shadow-lg"
+        className="w-auto min-w-[200px] bg-gradient-to-r from-emerald-300 to-sky-400 text-gray-900 font-semibold py-3 px-6 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 transform hover:from-emerald-400 hover:to-sky-500"
       >
         {isSending ? (
           <span className="flex items-center justify-center">
@@ -142,6 +143,7 @@ export default function ContactForm() {
           'Send Message'
         )}
       </button>
+      </div>
     </form>
   );
 }
