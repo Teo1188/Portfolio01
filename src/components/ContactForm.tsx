@@ -7,16 +7,35 @@ export default function ContactForm() {
   const [isSending, setIsSending] = useState(false);
   const [isSent, setIsSent] = useState(false);
 
+  // Validar que las variables de entorno existan
+  const validateEnvVars = () => {
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      console.error('Faltan variables de entorno de EmailJS');
+      return false;
+    }
+    return true;
+  };
+
   const sendEmail = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!validateEnvVars()) {
+      alert('Error de configuración. Por favor, contacta al administrador.');
+      return;
+    }
+
     setIsSending(true);
 
     try {
       await emailjs.sendForm(
-        'YOUR_SERVICE_ID', // Reemplaza con tu Service ID de EmailJS
-        'YOUR_TEMPLATE_ID', // Reemplaza con tu Template ID de EmailJS
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
         form.current!,
-        'YOUR_PUBLIC_KEY' // Reemplaza con tu Public Key de EmailJS
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       );
       
       setIsSent(true);
@@ -50,13 +69,13 @@ export default function ContactForm() {
     <form ref={form} onSubmit={sendEmail} className="space-y-6">
       <div className="grid md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="from_name" className="block text-sm font-medium text-gray-700 mb-2">
             Name *
           </label>
           <input 
             type="text" 
-            id="name"
-            name="user_name" 
+            id="from_name"
+            name="from_name"
             required 
             className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-gray-900 placeholder-gray-500"
             placeholder="Your full name"
@@ -64,13 +83,13 @@ export default function ContactForm() {
         </div>
         
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="from_email" className="block text-sm font-medium text-gray-700 mb-2">
             Email *
           </label>
           <input 
             type="email" 
-            id="email"
-            name="user_email" 
+            id="from_email"
+            name="from_email"
             required 
             className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-gray-900 placeholder-gray-500"
             placeholder="your.email@example.com"
@@ -98,7 +117,7 @@ export default function ContactForm() {
         </label>
         <textarea 
           id="message"
-          name="message" 
+          name="message"  // Este ya coincide con el template
           rows={6} 
           required 
           className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-vertical text-gray-900 placeholder-gray-500"
@@ -109,7 +128,7 @@ export default function ContactForm() {
       <button 
         type="submit" 
         disabled={isSending}
-        className="w-full bg-gradient-to-r from-emerald-300 to-sky-400 text-gray-900 font-semibold py-3 px-6 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 transform hover:from-emerald-400 hover:to-sky-500"
+        className="w-full bg-gradient-to-r from-emerald-300 to-sky-400 text-gray-900 font-semibold py-3 px-6 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 transform hover:scale-105 hover:shadow-lg"
       >
         {isSending ? (
           <span className="flex items-center justify-center">
