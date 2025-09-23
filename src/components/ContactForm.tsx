@@ -1,13 +1,14 @@
 "use client";
 import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
+import ArrowUpRightIcon from '@/assets/icons/arrow-up-right.svg';
 
 export default function ContactForm() {
   const form = useRef<HTMLFormElement>(null);
   const [isSending, setIsSending] = useState(false);
   const [isSent, setIsSent] = useState(false);
 
-  // Validar que las variables de entorno existan
+
   const validateEnvVars = () => {
     const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
     const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
@@ -69,7 +70,7 @@ export default function ContactForm() {
     <form ref={form} onSubmit={sendEmail} className="space-y-6">
       <div className="grid md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="from_name" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="from_name" className="block text-sm font-medium text-white/60 mb-2">
             Name *
           </label>
           <input 
@@ -83,7 +84,7 @@ export default function ContactForm() {
         </div>
         
         <div>
-          <label htmlFor="from_email" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="from_email" className="block text-sm font-medium text-white/60 mb-2">
             Email *
           </label>
           <input 
@@ -98,7 +99,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="subject" className="block text-sm font-medium text-white/60 mb-2">
           Subject *
         </label>
         <input 
@@ -112,12 +113,12 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="message" className="block text-sm font-medium text-white/60 mb-2">
           Message *
         </label>
         <textarea 
           id="message"
-          name="message"  // Este ya coincide con el template
+          name="message"
           rows={6} 
           required 
           className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-vertical text-gray-900 placeholder-gray-500"
@@ -129,7 +130,7 @@ export default function ContactForm() {
       <button 
         type="submit" 
         disabled={isSending}
-        className="w-auto min-w-[200px] bg-gradient-to-r from-emerald-300 to-sky-400 text-gray-900 font-semibold py-3 px-6 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 transform hover:from-emerald-400 hover:to-sky-500"
+        className="w-auto inline-flex items-center gap-2 min-w-[200px] mb-20 bg-gradient-to-r from-emerald-300 to-sky-400 text-gray-900 font-semibold py-3 px-6 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 transform hover:from-emerald-400 hover:to-sky-500"
       >
         {isSending ? (
           <span className="flex items-center justify-center">
@@ -142,6 +143,7 @@ export default function ContactForm() {
         ) : (
           'Send Message'
         )}
+        <ArrowUpRightIcon className="size-4" />
       </button>
       </div>
     </form>
