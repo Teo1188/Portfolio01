@@ -14,7 +14,7 @@ export default function ContactPage() {
           <div className="flex flex-col items-center text-center mb-12">
             <Image
                 src={contactImage}
-                className="size-[150px] h-auto pb-20"
+                className="size-[150px] h-auto mt-10 pb-20 animate-bounce"
                 alt="personality character based in teo"
               />
             <h1 className="font-serif text-4xl md:text-5xl mb-4">
