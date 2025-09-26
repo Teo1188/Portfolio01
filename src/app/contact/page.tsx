@@ -11,10 +11,10 @@ export default function ContactPage() {
       <main className="flex-grow pt-20"> {/* Ajusta el padding-top según tu header */}
         <div className="container mx-auto px-4 py-12">
           {/* Hero Section del Contacto */}
-          <div className="flex flex-col items-center text-center mb-12">
+          <div className="flex flex-col items-center text-center mb-12 mt-20">
             <Image
                 src={contactImage}
-                className="size-[150px] h-auto mt-10 pb-20 animate-bounce"
+                className="size-[200px] h-auto mt-10 pb-20 animate-bounce"
                 alt="personality character based in teo"
               />
             <h1 className="font-serif text-4xl md:text-5xl mb-4">
